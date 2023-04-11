@@ -8,7 +8,7 @@ test('kymmenen uutiset', async ({ page }) => {
 })
 
 // virheellinen sähköpostin muoto
-test('virheellinen muoto', async ({ page }) => {
+test('virheellinen sähköpostin muoto', async ({ page }) => {
   await page.goto('https://areena.yle.fi/tv')
   await page.getByRole('button', { name: 'Kirjaudu', exact: true }).click()
   await page
