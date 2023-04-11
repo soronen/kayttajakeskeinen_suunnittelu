@@ -11,6 +11,6 @@ npx playwright install
 
 To run the tests and show the html report, run
 ``` shell
-npx playwright test
+npx playwright test --headed
 npx playwright show-report
 ```
