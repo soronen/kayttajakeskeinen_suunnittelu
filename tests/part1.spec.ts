@@ -6,8 +6,7 @@ test('kymmenen uutiset', async ({ page }) => {
   await page.getByRole('link', { name: 'TV-opas' }).click()
   await expect(page.getByText('Kymmenen uutiset')).toBeVisible
 
-  await expect(page.getByText(/22.00 Kymmenen uutiset/g)).toBeVisible;
-
+  await expect(page.getByText(/22.00 Kymmenen uutiset/g)).toBeVisible
 })
 
 // virheellinen sähköpostin muoto
@@ -51,9 +50,7 @@ test('virheellinen sähköpostin muoto', async ({ page }) => {
   await page
     .frameLocator('internal:role=dialog[name="kirjaudu sisään"i] >> iframe')
     .getByRole('button', { name: 'Luo Tunnus' })
-    .click()
-
-  page.frameLocator('internal:role=dialog[name="kirjaudu sisään"i] >> iframe').getByRole('alert')
+    .press('Enter')
 
   await expect(
     page.frameLocator('internal:role=dialog[name="kirjaudu sisään"i] >> iframe').getByRole('alert')
