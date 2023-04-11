@@ -5,6 +5,9 @@ test('kymmenen uutiset', async ({ page }) => {
   await page.goto('https://areena.yle.fi/tv')
   await page.getByRole('link', { name: 'TV-opas' }).click()
   await expect(page.getByText('Kymmenen uutiset')).toBeVisible
+
+  await expect(page.getByText(/22.00 Kymmenen uutiset/g)).toBeVisible;
+
 })
 
 // virheellinen sähköpostin muoto
