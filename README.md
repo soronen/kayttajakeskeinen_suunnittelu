@@ -7,6 +7,8 @@ git clone https://github.com/soronen/kayttajakeskeinen_suunnittelu.git
 cd kayttajakeskeinen_suunnittelu
 npm install
 npx playwright install
+npm install @axe-core/playwright
+npm i -D axe-html-reporter
 ```
 
 To run the tests and show the html report, run
