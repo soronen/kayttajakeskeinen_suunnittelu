@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 //import { injectAxe, checkA11y } from '@axe-core/playwright';
 
 const AxeBuilder = require('@axe-core/playwright').default;
+import { createHtmlReport } from 'axe-html-reporter';
 // kymmenen uutiset
 test('kymmenen uutiset', async ({ page }) => {
 
@@ -12,9 +13,15 @@ test('kymmenen uutiset', async ({ page }) => {
 
   try {
     const results = await new AxeBuilder({ page }).analyze();
-    console.log(results);
+
+    createHtmlReport({
+      results,
+      options: {
+        reportFileName: 'areena_opas-accessibility.html'
+      }
+    })
   } catch (e) {
-    // do something with the error
+
   }
 })
 
@@ -69,9 +76,15 @@ test('virheellinen sähköpostin muoto', async ({ page }) => {
 
   try {
     const results = await new AxeBuilder({ page }).analyze();
-    console.log(results);
+
+    createHtmlReport({
+      results,
+      options: {
+        reportFileName: 'login-accessibility.html'
+      }
+    })
   } catch (e) {
-    // do something with the error
+
   }
 })
 
@@ -94,9 +107,14 @@ test('kummeli k3j5', async ({ page }) => {
 
   try {
     const results = await new AxeBuilder({ page }).analyze();
-    console.log(results);
+
+    createHtmlReport({
+      results,
+      options: {
+        reportFileName: 'kummeli-accessibility.html'
+      }
+    })
   } catch (e) {
-    // do something with the error
   }
 })
 
@@ -110,3 +128,4 @@ test('labeling', async ({ page }) => {
     expect(ariaLabel).toBeTruthy() // Assert that aria-label contains a non-empty string
   }
 })
+
