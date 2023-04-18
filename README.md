@@ -16,3 +16,6 @@ To run the tests and show the html report, run
 npx playwright test --headed
 npx playwright show-report
 ```
+
+The accessibility tests can be found under the folder called 'artifacts'.
+
