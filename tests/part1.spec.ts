@@ -127,5 +127,18 @@ test('labeling', async ({ page }) => {
     const ariaLabel = await logo.getAttribute('aria-label')
     expect(ariaLabel).toBeTruthy() // Assert that aria-label contains a non-empty string
   }
+
+  try {
+    const results = await new AxeBuilder({ page }).analyze();
+
+    createHtmlReport({
+      results,
+      options: {
+        reportFileName: 'kummeli-accessibility.html'
+      }
+    })
+  } catch (e) {
+  }
+  
 })
 
