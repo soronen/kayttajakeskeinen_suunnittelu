@@ -8,6 +8,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.32.3"
+    "@applitools/eyes-playwright": "^1.15.1",
+    "@playwright/test": "^1.32.3",
+    "axe-html-reporter": "^2.2.3",
+    "playwright-testing-library": "^4.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
