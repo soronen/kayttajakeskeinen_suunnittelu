@@ -10,10 +10,12 @@
   "devDependencies": {
     "@applitools/eyes-playwright": "^1.15.1",
     "@playwright/test": "^1.32.3",
+    "@types/mocha": "^9.1.1",
     "axe-html-reporter": "^2.2.3",
     "playwright-testing-library": "^4.5.0"
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.6.1",
     "dotenv": "^16.0.3"
   }
 }
