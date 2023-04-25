@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230425 21:15:39.276" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\Eetu\Projects\robot\tests.robot">
+<test id="s1-t1" name="Check Kymmenen Uutiset" line="12">
+<kw name="Open Yle Areena">
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230425 21:15:40.593" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "C:\\Users\\Eetu\\Projects\\robot\\browser\\traces\\5976e36d-5c62-4053-8052-b3600004875e"}</msg>
+<msg timestamp="20230425 21:15:41.205" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"C:\\Users\\Eetu\\Projects\\robot\\browser\\traces\\5976e36d-5c62-4053-8052-b3600004875e"}</msg>
+<status status="PASS" starttime="20230425 21:15:40.593" endtime="20230425 21:15:41.206"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://areena.yle.fi/tv</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230425 21:15:42.668" level="INFO">Successfully initialized new page object and opened url: https://areena.yle.fi/tv</msg>
+<msg timestamp="20230425 21:15:42.668" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230425 21:15:41.207" endtime="20230425 21:15:42.668"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:15:42.678" level="INFO">Title: 'Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi'</msg>
+<msg timestamp="20230425 21:15:42.678" level="INFO">${title} = Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi</msg>
+<status status="PASS" starttime="20230425 21:15:42.669" endtime="20230425 21:15:42.678"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Yle Areena</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:15:42.678" endtime="20230425 21:15:42.680"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230425 21:15:42.680" endtime="20230425 21:15:44.698"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:40.592" endtime="20230425 21:15:44.698"/>
+</kw>
+<kw name="Go To TV Opas">
+<kw name="Click" library="Browser">
+<arg>//a[@href='/tv/opas']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:15:44.700" endtime="20230425 21:15:44.948"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:15:45.020" level="INFO">Title: 'TV-opas | Ohjelmat tänään | Areena | yle.fi'</msg>
+<msg timestamp="20230425 21:15:45.020" level="INFO">${title} = TV-opas | Ohjelmat tänään | Areena | yle.fi</msg>
+<status status="PASS" starttime="20230425 21:15:44.948" endtime="20230425 21:15:45.020"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>TV-opas</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:15:45.020" endtime="20230425 21:15:45.021"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:44.699" endtime="20230425 21:15:45.021"/>
+</kw>
+<kw name="Check Kymmenen Uutiset">
+<kw name="Get Element" library="Browser">
+<arg>xpath=//div[@class="schedule-card__header"]//span[@itemprop="name" and contains(text(),"Kymmenen uutiset")]//ancestor::div[contains(@class,"schedule-card__header")]//time[@itemprop="startDate" and contains(text(),"22.00")]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20230425 21:15:45.203" level="INFO">Locator found successfully.</msg>
+<status status="PASS" starttime="20230425 21:15:45.022" endtime="20230425 21:15:45.203"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:45.021" endtime="20230425 21:15:45.203"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:40.588" endtime="20230425 21:15:45.204"/>
+</test>
+<test id="s1-t2" name="Check Channel Labels" line="17">
+<kw name="Open Yle Areena">
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230425 21:15:45.342" level="INFO">Switching browser to browser=385cff49-90da-498a-a2b0-09c627b64673</msg>
+<msg timestamp="20230425 21:15:45.345" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230425 21:15:45.346" level="INFO">Reusing existing browser with id: browser=385cff49-90da-498a-a2b0-09c627b64673</msg>
+<status status="PASS" starttime="20230425 21:15:45.341" endtime="20230425 21:15:45.346"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://areena.yle.fi/tv</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230425 21:15:46.665" level="INFO">Successfully initialized new page object and opened url: https://areena.yle.fi/tv</msg>
+<msg timestamp="20230425 21:15:46.665" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230425 21:15:45.346" endtime="20230425 21:15:46.665"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:15:46.673" level="INFO">Title: 'Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi'</msg>
+<msg timestamp="20230425 21:15:46.674" level="INFO">${title} = Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi</msg>
+<status status="PASS" starttime="20230425 21:15:46.665" endtime="20230425 21:15:46.674"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Yle Areena</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:15:46.675" endtime="20230425 21:15:46.675"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230425 21:15:46.675" endtime="20230425 21:15:48.936"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:45.341" endtime="20230425 21:15:48.936"/>
+</kw>
+<kw name="Go To TV Opas">
+<kw name="Click" library="Browser">
+<arg>//a[@href='/tv/opas']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:15:48.937" endtime="20230425 21:15:49.098"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:15:49.111" level="INFO">Title: 'TV-opas | Ohjelmat tänään | Areena | yle.fi'</msg>
+<msg timestamp="20230425 21:15:49.111" level="INFO">${title} = TV-opas | Ohjelmat tänään | Areena | yle.fi</msg>
+<status status="PASS" starttime="20230425 21:15:49.098" endtime="20230425 21:15:49.111"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>TV-opas</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:15:49.111" endtime="20230425 21:15:49.112"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:48.937" endtime="20230425 21:15:49.112"/>
+</kw>
+<kw name="Check Channel Logo Labels">
+<kw name="Get Elements" library="Browser">
+<var>${elements}</var>
+<arg>css=.class &gt; \#channel-header__link</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<msg timestamp="20230425 21:15:59.136" level="INFO">Found 0 Locators successfully.</msg>
+<msg timestamp="20230425 21:15:59.136" level="INFO">${elements} = []</msg>
+<status status="PASS" starttime="20230425 21:15:49.113" endtime="20230425 21:15:59.136"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}"/>
+<kw name="Get Attribute" library="Browser">
+<var>${aria_label}</var>
+<arg>${element}</arg>
+<arg>aria-label</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230425 21:15:59.137" endtime="20230425 21:15:59.137"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${aria_label}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20230425 21:15:59.137" endtime="20230425 21:15:59.137"/>
+</kw>
+<status status="NOT RUN" starttime="20230425 21:15:59.137" endtime="20230425 21:15:59.137"/>
+</iter>
+<status status="NOT RUN" starttime="20230425 21:15:59.137" endtime="20230425 21:15:59.137"/>
+</for>
+<status status="PASS" starttime="20230425 21:15:49.112" endtime="20230425 21:15:59.138"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:45.336" endtime="20230425 21:15:59.138"/>
+</test>
+<test id="s1-t3" name="Kummelit Episode" line="22">
+<kw name="Open Yle Areena">
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230425 21:15:59.299" level="INFO">Switching browser to browser=385cff49-90da-498a-a2b0-09c627b64673</msg>
+<msg timestamp="20230425 21:15:59.301" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230425 21:15:59.301" level="INFO">Reusing existing browser with id: browser=385cff49-90da-498a-a2b0-09c627b64673</msg>
+<status status="PASS" starttime="20230425 21:15:59.298" endtime="20230425 21:15:59.302"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://areena.yle.fi/tv</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230425 21:16:02.135" level="INFO">Successfully initialized new page object and opened url: https://areena.yle.fi/tv</msg>
+<msg timestamp="20230425 21:16:02.135" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230425 21:15:59.302" endtime="20230425 21:16:02.135"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:16:02.142" level="INFO">Title: 'Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi'</msg>
+<msg timestamp="20230425 21:16:02.143" level="INFO">${title} = Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi</msg>
+<status status="PASS" starttime="20230425 21:16:02.135" endtime="20230425 21:16:02.143"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Yle Areena</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:16:02.143" endtime="20230425 21:16:02.143"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230425 21:16:02.144" endtime="20230425 21:16:03.413"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:59.297" endtime="20230425 21:16:03.413"/>
+</kw>
+<kw name="Go To Kummeli With Searcbox">
+<kw name="Get Element" library="Browser">
+<var>${searchbox}</var>
+<arg>css=[name='query']</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20230425 21:16:03.453" level="INFO">Locator found successfully.</msg>
+<msg timestamp="20230425 21:16:03.453" level="INFO">${searchbox} = element=67cdab50-6a1b-4ca0-9914-d9df82c451e1</msg>
+<status status="PASS" starttime="20230425 21:16:03.414" endtime="20230425 21:16:03.453"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${searchbox}</arg>
+<arg>Kummeli</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230425 21:16:03.453" level="INFO">Types the text 'Kummeli' in the given field.</msg>
+<status status="PASS" starttime="20230425 21:16:03.453" endtime="20230425 21:16:03.526"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//a[@href='/1-3339547']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:03.526" endtime="20230425 21:16:04.481"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:03.414" endtime="20230425 21:16:04.481"/>
+</kw>
+<kw name="Go To K3J5">
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:16:04.490" level="INFO">Title: 'Kummeli | Yle Areena'</msg>
+<msg timestamp="20230425 21:16:04.490" level="INFO">${title} = Kummeli | Yle Areena</msg>
+<status status="PASS" starttime="20230425 21:16:04.483" endtime="20230425 21:16:04.490"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Kummeli</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:16:04.491" endtime="20230425 21:16:04.491"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//button[contains(text(),'Kausi 3')]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:04.491" endtime="20230425 21:16:05.126"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//a[@href='/1-1796319']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:05.127" endtime="20230425 21:16:05.504"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:16:05.511" level="INFO">Title: 'K3, J5: Kummeli | Kummeli | Yle Areena'</msg>
+<msg timestamp="20230425 21:16:05.512" level="INFO">${title} = K3, J5: Kummeli | Kummeli | Yle Areena</msg>
+<status status="PASS" starttime="20230425 21:16:05.504" endtime="20230425 21:16:05.512"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>K3, J5</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:16:05.512" endtime="20230425 21:16:05.512"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:04.483" endtime="20230425 21:16:05.513"/>
+</kw>
+<kw name="Check Title And Release Date">
+<kw name="Get Element" library="Browser">
+<arg>//p[contains(text(),'Legendaarista Kummelipelleilyä vuodelta 1993')]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20230425 21:16:05.662" level="INFO">Locator found successfully.</msg>
+<status status="PASS" starttime="20230425 21:16:05.513" endtime="20230425 21:16:05.662"/>
+</kw>
+<kw name="Get Element" library="Browser">
+<arg>//time[contains(text(), '10.1.2006')]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20230425 21:16:05.700" level="INFO">Locator found successfully.</msg>
+<status status="PASS" starttime="20230425 21:16:05.662" endtime="20230425 21:16:05.700"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:05.513" endtime="20230425 21:16:05.700"/>
+</kw>
+<status status="PASS" starttime="20230425 21:15:59.291" endtime="20230425 21:16:05.701"/>
+</test>
+<test id="s1-t4" name="Create Invalid Account" line="28">
+<kw name="Open Yle Areena">
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230425 21:16:05.823" level="INFO">Switching browser to browser=385cff49-90da-498a-a2b0-09c627b64673</msg>
+<msg timestamp="20230425 21:16:05.826" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230425 21:16:05.826" level="INFO">Reusing existing browser with id: browser=385cff49-90da-498a-a2b0-09c627b64673</msg>
+<status status="PASS" starttime="20230425 21:16:05.823" endtime="20230425 21:16:05.826"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://areena.yle.fi/tv</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230425 21:16:08.239" level="INFO">Successfully initialized new page object and opened url: https://areena.yle.fi/tv</msg>
+<msg timestamp="20230425 21:16:08.239" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230425 21:16:05.826" endtime="20230425 21:16:08.239"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230425 21:16:08.252" level="INFO">Title: 'Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi'</msg>
+<msg timestamp="20230425 21:16:08.252" level="INFO">${title} = Yle Areena – Enemmän kuin ehdit katsoa ja kuunnella | TV | Areena | yle.fi</msg>
+<status status="PASS" starttime="20230425 21:16:08.239" endtime="20230425 21:16:08.252"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Yle Areena</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230425 21:16:08.252" endtime="20230425 21:16:08.252"/>
+</kw>
+<kw name="Wait Until Network Is Idle" library="Browser">
+<tag>HTTP</tag>
+<tag>Wait</tag>
+<doc>Waits until there has been at least one instance of 500 ms of no network traffic on the page after loading.</doc>
+<status status="PASS" starttime="20230425 21:16:08.252" endtime="20230425 21:16:09.524"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:05.822" endtime="20230425 21:16:09.524"/>
+</kw>
+<kw name="Go To Register">
+<kw name="Click" library="Browser">
+<arg>css=[class*='yle-header-tunnus-login']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:09.526" endtime="20230425 21:16:09.686"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>iframe.tunnus-sdk__iframe &gt;&gt;&gt; .register-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:09.686" endtime="20230425 21:16:10.595"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:09.525" endtime="20230425 21:16:10.595"/>
+</kw>
+<kw name="Fill Register Form With Invalid Email">
+<kw name="Set Selector Prefix" library="Browser">
+<arg>iframe.tunnus-sdk__iframe &gt;&gt;&gt;</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the prefix for all selectors in the given scope.</doc>
+<status status="PASS" starttime="20230425 21:16:10.596" endtime="20230425 21:16:10.597"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=email</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230425 21:16:10.597" level="INFO">Fills the text 'eetu.soronen' in the given field.</msg>
+<status status="PASS" starttime="20230425 21:16:10.597" endtime="20230425 21:16:10.779"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230425 21:16:10.780" level="INFO">Fills the text 'password123' in the given field.</msg>
+<status status="PASS" starttime="20230425 21:16:10.780" endtime="20230425 21:16:10.896"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>select[name=month]</arg>
+<arg>label</arg>
+<arg>Elokuu</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:10.896" endtime="20230425 21:16:10.987"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>select[name=year]</arg>
+<arg>label</arg>
+<arg>2001</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:10.988" endtime="20230425 21:16:11.065"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>input[aria-labelledby="registerAcceptTosLabel"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:11.066" endtime="20230425 21:16:11.206"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:10.596" endtime="20230425 21:16:11.206"/>
+</kw>
+<kw name="Submit And Check For Errors">
+<kw name="Set Selector Prefix" library="Browser">
+<arg>iframe.tunnus-sdk__iframe &gt;&gt;&gt;</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the prefix for all selectors in the given scope.</doc>
+<status status="PASS" starttime="20230425 21:16:11.206" endtime="20230425 21:16:11.208"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>button[type="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230425 21:16:11.208" endtime="20230425 21:16:11.334"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//li[contains(text(),'Tarkista sähköpostiosoitteen muoto.')]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230425 21:16:11.352" level="INFO">Waited for Element with selector iframe.tunnus-sdk__iframe &gt;&gt;&gt; //li[contains(text(),'Tarkista sähköpostiosoitteen muoto.')] at state visible</msg>
+<status status="PASS" starttime="20230425 21:16:11.334" endtime="20230425 21:16:11.352"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>text="Rekisteröityminen ei onnistunut, tarkista antamasi tiedot."</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230425 21:16:11.375" level="INFO">Waited for Element with selector iframe.tunnus-sdk__iframe &gt;&gt;&gt; text="Rekisteröityminen ei onnistunut, tarkista antamasi tiedot." at state visible</msg>
+<status status="PASS" starttime="20230425 21:16:11.352" endtime="20230425 21:16:11.375"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:11.206" endtime="20230425 21:16:11.376"/>
+</kw>
+<status status="PASS" starttime="20230425 21:16:05.818" endtime="20230425 21:16:11.376"/>
+</test>
+<status status="PASS" starttime="20230425 21:15:39.278" endtime="20230425 21:16:11.487"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
