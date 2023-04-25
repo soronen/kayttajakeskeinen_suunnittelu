@@ -139,6 +139,4 @@ test('labeling', async ({ page }) => {
     })
   } catch (e) {
   }
-  
 })
-
