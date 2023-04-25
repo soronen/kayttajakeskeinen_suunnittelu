@@ -5,7 +5,7 @@ import { Eyes, Target } from '@applitools/eyes-playwright';
 const eyes = new Eyes();
 
 // Set your Applitools API key
-eyes.setApiKey("youapikey");
+eyes.setApiKey("your Api Key");
 
 
 // virheellinen sähköpostin muoto
