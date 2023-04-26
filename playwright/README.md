@@ -48,3 +48,8 @@ npx playwright test part3.spec.ts
 ![Success](success.png "Success")
 
 ![More Success](tests_passed.png "More Success")
+
+## applitools
+![Success](applitools.png "Success")
+
+![Some Success](applitools2.png "Some Success")
